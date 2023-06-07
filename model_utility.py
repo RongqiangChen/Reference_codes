@@ -19,3 +19,13 @@ def linear_spline(df,
   param valid_range: if x is outside valid range, it will be treated as missing
   type valid_range: list/tuple
   
+  return: spark df
+  
+  """
+  
+  if (isinstance(x, str) is False) or (x is None):
+    raise ValueError("variable name should be a non-empty string")
+    
+  x_in_df = True if x in df.columns else False
+  
+  
